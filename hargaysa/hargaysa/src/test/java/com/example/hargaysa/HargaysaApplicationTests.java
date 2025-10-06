@@ -1,13 +1,22 @@
-package com.example.hargaysa;
+package com.example.hellocd;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootTest
-class HargaysaApplicationTests {
+@SpringBootApplication
+public class HellocdApplication {
 
-	@Test
-	void contextLoads() {
+
+	@RequestMapping("/")
+	String home() {
+		return "Hello World!";
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(HellocdApplication.class, args);
 	}
 
 }
